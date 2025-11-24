@@ -259,3 +259,27 @@ article p{
   outline: 2px solid #555;
   outline-offset: 3px;
 }
+/* Floating CTA (Work / Download CV) */
+.floating-cta {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.floating-cta a {
+  background: #111;
+  color: #fff;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.floating-cta a:hover {
+  background: #333;
+}
