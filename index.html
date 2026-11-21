@@ -1,255 +1,654 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dima Alazzi — UX Research</title>
-  <meta name="description" content="UX research across finance, AI, and complex systems.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dima Alazzi — Research & AI Consulting</title>
+<meta name="description" content="Independent research and AI enablement consultant in London. 10+ years leading UX, customer and strategic research across wealth management, connected TV, media and social impact. UX research, research strategy, AI enablement and workflow automation.">
+<link rel="canonical" href="https://dimaalazzi.com/">
+<meta property="og:title" content="Dima Alazzi — Research & AI Consulting">
+<meta property="og:description" content="UX research, market research, research strategy, AI enablement and workflow automation for product and research teams.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dimaalazzi.com/">
+<meta property="og:image" content="https://dimaalazzi.com/images/dima-alazzi.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161a'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='17' text-anchor='middle' fill='%23c8f169'%3EDA%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Dima Alazzi",
+  "url": "https://dimaalazzi.com/",
+  "image": "https://dimaalazzi.com/images/dima-alazzi.jpg",
+  "email": "dimaalazzi@icloud.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Dima Alazzi",
+    "jobTitle": "Research & AI Enablement Consultant",
+    "sameAs": ["https://www.linkedin.com/in/dimaalazzi/", "https://github.com/dima-alazzi"]
+  },
+  "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"},
+  "areaServed": "Worldwide",
+  "knowsLanguage": ["en", "ar"],
+  "serviceType": ["UX Research", "Market Research", "Research Strategy", "Research Operations", "AI Enablement", "Workflow Automation", "Research Training"]
+}
+</script>
+<style>
+:root{
+  --ink:#14161a; --ink-2:#2a2e35; --muted:#5d6470; --line:#e3e0d8;
+  --paper:#f7f5f0; --card:#ffffff; --accent:#c8f169; --accent-ink:#3d5a0a;
+  --dark:#14161a; --dark-2:#1e2127; --dark-line:#30343c; --dark-muted:#a4aab4;
+  --radius:14px; --max:1160px;
+  --serif:"Fraunces", Georgia, serif; --sans:"Inter", system-ui, -apple-system, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4vw,44px);margin-bottom:16px}
+h3{font-size:22px;margin-bottom:8px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:14px;display:block}
+.lede{font-size:19px;color:var(--muted);max-width:660px}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--ink)}
+.btn-ghost{border:1px solid currentColor}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(20,22,26,.92);backdrop-filter:blur(10px);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:21px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--accent);color:var(--ink);font-size:15px}
+.nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+.nav ul a{text-decoration:none;font-size:15px;color:#d9dce1}
+.nav ul a:hover{color:#fff}
+.nav ul a.btn{color:var(--ink)}
+.nav .btn{padding:10px 18px}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+
+/* hero */
+.hero{background:var(--dark);color:#fff;padding:88px 0 104px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-180px;top:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(200,241,105,.18),transparent 65%)}
+.hero .wrap{position:relative;z-index:1}
+.hero .eyebrow{color:var(--accent)}
+.hero h1{font-size:clamp(40px,6.4vw,76px);max-width:900px;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.hero p{font-size:20px;color:var(--dark-muted);max-width:660px;margin-bottom:36px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn-ghost{color:#fff;border-color:var(--dark-line)}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);margin-top:72px;border-top:1px solid var(--dark-line)}
+.stat{padding:26px 20px 0 0}
+.stat b{display:block;font-family:var(--serif);font-size:44px;font-weight:400;color:var(--accent);line-height:1}
+.stat small{display:block;margin-top:8px;font-size:14px;color:var(--dark-muted);line-height:1.4}
+
+/* experience strip */
+.strip{padding:34px 0;border-bottom:1px solid var(--line);background:var(--card)}
+.strip .wrap{display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.strip p{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.strip ul{display:flex;gap:36px;flex-wrap:wrap;list-style:none;font-family:var(--serif);font-size:22px;color:var(--ink-2)}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column}
+.svc .num{font-family:var(--serif);color:var(--accent-ink);font-size:15px;margin-bottom:18px}
+.svc p{color:var(--muted);font-size:16px;margin-bottom:18px}
+.svc ul{list-style:none;margin-top:auto;border-top:1px solid var(--line);padding-top:16px}
+.svc li{font-size:15px;padding:4px 0 4px 20px;position:relative}
+.svc li::before{content:"";position:absolute;left:0;top:13px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px var(--accent-ink) inset}
+.svc.feature{background:var(--dark);color:#fff;border-color:var(--dark)}
+.svc.feature p{color:var(--dark-muted)}
+.svc.feature ul{border-color:var(--dark-line)}
+.svc.feature .num{color:var(--accent)}
+.tag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:600;background:var(--accent);color:var(--ink);padding:3px 10px;border-radius:999px;margin-bottom:12px}
+
+/* AI */
+.ai{background:var(--dark);color:#fff}
+.ai .eyebrow{color:var(--accent)}
+.ai .lede{color:var(--dark-muted)}
+.ai-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.flow{display:grid;gap:12px;margin-top:8px}
+.flow-step{display:grid;grid-template-columns:44px 1fr;gap:16px;background:var(--dark-2);border:1px solid var(--dark-line);border-radius:12px;padding:18px}
+.flow-step i{font-style:normal;display:grid;place-items:center;width:44px;height:44px;border-radius:10px;background:rgba(200,241,105,.12);color:var(--accent);font-family:var(--serif);font-size:18px}
+.flow-step b{display:block;font-weight:600;margin-bottom:2px}
+.flow-step span{font-size:15px;color:var(--dark-muted)}
+.ai-points{list-style:none;margin-top:28px;display:grid;gap:16px}
+.ai-points li{padding-left:28px;position:relative;color:#d9dce1}
+.ai-points li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+.ai-points strong{color:#fff}
+
+/* work */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.case .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.case .meta span{font-size:12px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.case .meta span.hl{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.case p{color:var(--muted);font-size:16px}
+.case .out{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);font-size:15px;color:var(--ink-2)}
+.case .out b{color:var(--accent-ink)}
+.case .demo{display:inline-block;margin-top:12px;font-weight:600;font-size:15px;color:var(--accent-ink);text-decoration:none;border-bottom:1px solid currentColor}
+
+/* engagement */
+.engage{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.eng-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.eng{border-top:3px solid var(--ink);padding-top:20px}
+.eng p{color:var(--muted);font-size:15px}
+.eng .when{margin-top:12px;font-size:14px;font-weight:600;color:var(--accent-ink)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px;counter-reset:s}
+.step{counter-increment:s;position:relative;padding-top:56px}
+.step::before{content:"0" counter(s);position:absolute;top:0;left:0;font-family:var(--serif);font-size:38px;color:var(--accent-ink)}
+.step p{color:var(--muted);font-size:15px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:64px;align-items:start}
+.profile{background:var(--dark);color:#fff;border-radius:var(--radius);padding:36px 32px;text-align:center;position:sticky;top:96px}
+.profile img{width:200px;height:200px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 20px;border:3px solid var(--accent);box-shadow:0 0 0 7px rgba(200,241,105,.12)}
+.pname{font-family:var(--serif);font-size:28px;line-height:1.2}
+.prole{color:var(--dark-muted);font-size:15px;margin-top:4px}
+.avail{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;font-weight:600;color:var(--accent);background:rgba(200,241,105,.1);border:1px solid rgba(200,241,105,.25);padding:6px 12px;border-radius:999px}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(200,241,105,.25)}
+.pfacts{list-style:none;text-align:left;margin:24px 0;border-top:1px solid var(--dark-line)}
+.pfacts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--dark-line);font-size:14px}
+.pfacts b{font-weight:500;color:var(--dark-muted);white-space:nowrap}
+.pfacts span{text-align:right;text-wrap:balance}
+.profile .btn{width:100%;justify-content:center}
+.cv-link{display:inline-block;margin-top:16px;font-size:14px;color:var(--dark-muted)}
+.cv-link:hover{color:#fff}
+.about-lede{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.35;color:var(--accent-ink);margin-bottom:22px}
+.about p{margin-bottom:18px;color:var(--ink-2)}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.cred{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:14px;color:var(--muted)}
+.cred b{display:block;font-size:15px;color:var(--ink)}
+.tk{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.tk span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px}
+.philo{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.philo div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.philo b{font-family:var(--serif);font-size:19px;display:block;margin-bottom:6px}
+.philo span{font-size:14px;color:var(--muted)}
+
+/* faq */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;line-height:1;color:var(--accent-ink)}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--dark);color:#fff}
+.contact .eyebrow{color:var(--accent)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.contact .lede{color:var(--dark-muted)}
+.direct{margin-top:32px;display:grid;gap:12px}
+.direct a{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--dark-line);border-radius:12px;padding:16px 20px;text-decoration:none}
+.direct a:hover{border-color:var(--accent)}
+.direct small{color:var(--dark-muted);font-size:13px;display:block}
+form{display:grid;gap:14px;background:var(--dark-2);border:1px solid var(--dark-line);border-radius:var(--radius);padding:28px}
+label{font-size:14px;color:var(--dark-muted);display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;background:var(--dark);color:#fff;border:1px solid var(--dark-line);border-radius:10px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+textarea{min-height:120px;resize:vertical}
+form .btn{justify-content:center;border:0;cursor:pointer;font-family:inherit}
+form .btn[disabled]{opacity:.6;cursor:wait}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.form-status{font-size:15px;color:var(--accent);min-height:0}
+.form-status:empty{display:none}
+.form-status a,.formnote a{color:#fff}
+.formnote{font-size:13px;color:var(--dark-muted)}
+
+footer{background:#0e0f12;color:var(--dark-muted);font-size:14px;padding:36px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:#d9dce1}
+footer nav{display:flex;gap:18px}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+@media (max-width:960px){
+  section{padding:72px 0}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .eng-grid,.steps,.philo{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .ai-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .profile{position:static;max-width:440px}
+}
+@media (max-width:720px){
+  .wrap{padding:0 16px}
+  body{font-size:16px}
+  .menu-btn{display:block}
+  .nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:var(--dark);flex-direction:column;align-items:flex-start;gap:0;padding:8px 16px 20px;border-bottom:1px solid var(--dark-line)}
+  .nav ul.open{display:flex}
+  .nav ul li{width:100%}
+  .nav ul a{display:block;padding:12px 0}
+  .nav ul a.btn{display:inline-flex;margin-top:8px;padding:10px 18px}
+  .svc-grid,.work-grid,.eng-grid,.steps,.philo,.creds{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat b{font-size:36px}
+  .hero{padding:56px 0 72px}
+  .hero p{font-size:18px}
+  .strip ul{gap:20px;font-size:19px}
+  .case,.svc{padding:24px}
+}
+</style>
 </head>
 <body>
-  <header class="hdr">
-    <nav class="nav">
-      <a class="brand" href="#home">Dima Alazzi</a>
-      <ul class="menu">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-copy">
-        <p class="kicker">UX Researcher, Mentor, Leader</p>
-        <h1>I study how people and technology evolve together.</h1>
-        <p class="lede">From social impact to AI and investment banking- I’ve built a career around understanding what moves humans, and how that shapes what we build next.</p>
-        <div class="cta">
-          <a class="btn primary" href="#work">View work</a>
-          <a class="btn ghost" href="assets/Dimi-Alazzi-CV.pdf" download>Download CV</a>
-        </div>
-      </div>
-      <figure class="hero-image">
-        <img src="dimi.jpg" alt="Dimi Alazzi portrait">
-      </figure>
-    </section>
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#top" class="logo"><span>DA</span>Dima Alazzi</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <ul id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#ai">AI enablement</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#engage">Ways to work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="btn btn-primary">Book a call</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section id="work" class="section">
-      <div class="section-head">
-        <h2>Selected work</h2>
-        <p class="muted"></p>
-      </div>
+<main id="top">
 
-      <div class="work-grid">
-        <details class="work-card">
-          <summary>
-            <div class="work-title">
-              <h3>Financial Advice & Decision-Making Research</h3>
-              <p class="work-sub">Strategic discovery & validation</p>
-            </div>
-            <span class="chip">Strategy</span>
-          </summary>
-          <div class="work-body">
-            <h4>Context</h4>
-            <p>In sophisticated financial environments, individuals balance a strong desire for autonomy with the need for reassurance at key decision moments. Experiences must support confidence without undermining control.</p>
-            <h4>The Challenge</h4>
-            <p>Understand when guidance meaningfully supports decision-making, when it introduces friction, and how digital experiences can adapt to different confidence and risk states.</p>
-            <h4>My Role & Approach</h4>
-            <p>I led end-to-end discovery and evaluative research across complex digital advice and investment journeys. This included moderated sessions spanning early consideration through active engagement, focusing on behavioural drivers such as confidence calibration, trust formation, and perceived risk.</p>
-            <p>The research examined how advice cues, language, and prompts influence decision momentum across different journey contexts.</p>
-            <h4>Outcome & Impact</h4>
-            <p>Insights informed experience strategy and prioritisation, helping teams introduce guidance where it strengthens decision confidence and step back where autonomy is preferred.</p>
-            <p class="meta"><strong>Focus areas:</strong> Behavioural insight · Advice engagement · Moderated research · Complex decision UX</p>
-          </div>
-        </details>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Research &amp; AI consultancy · London</span>
+    <h1>Research that changes decisions. <em>AI that makes your team faster at it.</em></h1>
+    <p>I help product, design and insight teams understand their customers and markets, build research that scales, and bring AI and automation into how research really gets done, including in regulated, high-stakes environments like financial services.</p>
+    <div class="ctas">
+      <a href="#contact" class="btn btn-primary">Start a conversation →</a>
+      <a href="#work" class="btn btn-ghost">See my work</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>10+</b><small>years shaping evidence-led decisions</small></div>
+      <div class="stat"><b>50+</b><small>end-to-end studies delivered</small></div>
+      <div class="stat"><b>15+</b><small>agency projects commissioned &amp; managed</small></div>
+      <div class="stat"><b>9</b><small>markets across four continents</small></div>
+      <div class="stat"><b>6</b><small>researchers hired, managed &amp; coached</small></div>
+    </div>
+  </div>
+</section>
 
-        <details class="work-card">
-          <summary>
-            <div class="work-title">
-              <h3>Digital Investing Journeys & Decision Confidence</h3>
-              <p class="work-sub">Mental models, risk, and reassurance</p>
-            </div>
-            <span class="chip">Journeys</span>
-          </summary>
-          <div class="work-body">
-            <h4>Context</h4>
-            <p>Digital investing tools often assume rational behaviour, yet emotional confidence plays a decisive role in how people act.</p>
-            <h4>The Challenge</h4>
-            <p>Understand how users approach investing journeys depending on entry point, perceived risk, and confidence level.</p>
-            <h4>My Role & Approach</h4>
-            <p>I researched mental models around autonomy, guidance, and reassurance, comparing expectations and behaviours across different digital contexts and journey states.</p>
-            <h4>Outcome & Impact</h4>
-            <p>The research clarified when users want self-directed control versus guided support, informing differentiated design and content strategies.</p>
-            <p class="meta"><strong>Focus areas:</strong> Decision psychology · Journey research · Digital UX</p>
-          </div>
-        </details>
+<!-- EXPERIENCE STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <p>Experience gained at</p>
+    <ul>
+      <li>Barclays</li><li>Sky</li><li>BBC</li><li>Mencap</li><li>UN · IOM</li><li>Moovr</li>
+    </ul>
+  </div>
+</div>
 
-        <details class="work-card">
-          <summary>
-            <div class="work-title">
-              <h3>Governance-Led Discovery for a Compliance Dashboard</h3>
-              <p class="work-sub">Designing for accountability, not just usability</p>
-            </div>
-            <span class="chip">Enterprise</span>
-          </summary>
-          <div class="work-body">
-            <h4>Context</h4>
-            <p>Internal platforms in regulated environments must support oversight, clarity, and audit readiness, not just efficiency.</p>
-            <h4>The Challenge</h4>
-            <p>Design systems that balance operational usability with governance, ownership, and escalation needs.</p>
-            <h4>My Role & Approach</h4>
-            <p>I led discovery research focused on workflows around accountability, exception handling, and status visibility, working closely with cross-functional stakeholders and framing insights through a governance and risk lens.</p>
-            <h4>Outcome & Impact</h4>
-            <p>The work influenced early product direction, helping teams design systems that support transparency, oversight, and regulatory resilience.</p>
-            <p class="meta"><strong>Focus areas:</strong> Enterprise UX · Governance · Complex systems</p>
-          </div>
-        </details>
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h2>Six ways I can help</h2>
+    <p class="lede">Take one on its own or combine them. Most clients start with a focused piece of work, then ask me to help their team keep going without me.</p>
 
-        <details class="work-card">
-          <summary>
-            <div class="work-title">
-              <h3>Research Operations & Leadership Enablement</h3>
-              <p class="work-sub">From research activity to decision-ready intelligence</p>
-            </div>
-            <span class="chip">Ops</span>
-          </summary>
-          <div class="work-body">
-            <h4>Context</h4>
-            <p>As research demand grows, senior leaders often lack visibility into how research aligns with strategy, timing, and investment.</p>
-            <h4>The Challenge</h4>
-            <p>Enable leadership to prioritise, resource, and act without exposing sensitive project detail.</p>
-            <h4>My Role & Approach</h4>
-            <p>I designed an integrated research enablement framework combining strategic research roadmapping, capacity forecasting across research streams, and a leadership-facing dashboard translating research activity into executive signals.</p>
-            <p>All components were deliberately framed through a governance and decision-support lens.</p>
-            <h4>Outcome & Impact</h4>
-            <ul>
-              <li>Improved leadership confidence in research planning and delivery</li>
-              <li>Clearer prioritisation and resourcing conversations</li>
-              <li>Reduced reactive and ad-hoc research</li>
-              <li>Embedded research earlier into strategic decision cycles</li>
-            </ul>
-            <p class="meta">This work reframed research as infrastructure for better decisions.</p>
-            <p class="meta"><strong>Focus areas:</strong> Research ops · Executive dashboards · Strategic planning · Governance</p>
-          </div>
-        </details>
-
-        <details class="work-card">
-          <summary>
-            <div class="work-title">
-              <h3>AI-Assisted Research Intake</h3>
-              <p class="work-sub">Exploring AI as a research partner (concept)</p>
-            </div>
-            <span class="chip">AI</span>
-          </summary>
-          <div class="work-body">
-            <h4>Context</h4>
-            <p>Poorly defined research requests create downstream friction and misalignment.</p>
-            <h4>The Challenge</h4>
-            <p>Help stakeholders articulate clearer research needs before work begins.</p>
-            <h4>My Role & Approach</h4>
-            <p>I designed and prototyped a conversational, AI-assisted intake experience that interprets ambiguous inputs and surfaces clearer research direction, supporting, not replacing, researcher judgement.</p>
-            <h4>Outcome & Impact</h4>
-            <p>Demonstrated how AI can elevate upstream research quality and reduce friction between teams and researchers.</p>
-            <p class="meta"><strong>Focus areas:</strong> AI-augmented UX · Conversational design · Prototyping</p>
-          </div>
-        </details>
-
-        <details class="work-card">
-          <summary>
-            <div class="work-title">
-              <h3>Remote Research in Low-Connectivity Contexts</h3>
-              <p class="work-sub">Research beyond ideal conditions</p>
-            </div>
-            <span class="chip">Impact</span>
-          </summary>
-          <div class="work-body">
-            <h4>Context</h4>
-            <p>Many research environments lack stable connectivity or access to standard tools.</p>
-            <h4>The Challenge</h4>
-            <p>Enable meaningful participation where traditional research methods fail.</p>
-            <h4>My Role & Approach</h4>
-            <p>I designed a research system allowing participants to contribute insights through locally accessible platforms, with qualitative inputs centralised for analysis.</p>
-            <h4>Outcome & Impact</h4>
-            <p>Enabled inclusive participation and informed decisions with insights that would otherwise be inaccessible.</p>
-            <p class="meta"><strong>Focus areas:</strong> Inclusive research · Constraint-led design · Global UX</p>
-          </div>
-        </details>
-
-        <details class="work-card">
-          <summary>
-            <div class="work-title">
-              <h3>SigQ</h3>
-              <p class="work-sub">AI agent demo concept</p>
-            </div>
-            <span class="chip">AI</span>
-          </summary>
-          <div class="work-body">
-            <h4>Context</h4>
-            <p>Stakeholder requests often begin vague, incomplete, or overly broad, which creates friction before meaningful work can begin.</p>
-            <h4>The Challenge</h4>
-            <p>Explore how AI could help structure unclear requests into sharper, more actionable briefs using simple, accessible tools.</p>
-            <h4>My Role & Approach</h4>
-            <p>I designed SigQ as a concept AI agent that interacts conversationally with a user, asks targeted clarification questions, and turns an initial rough request into a more structured product brief.</p>
-            <h4>Demo</h4>
-            <p><a href="/projects/sigq.html">Open SigQ demo page</a></p>
-            <p class="meta"><strong>Focus areas:</strong> AI-assisted workflows · Conversational UX · Brief refinement · Automation concept</p>
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <section id="services" class="section services">
-      <h2>Services</h2>
-      <div class="grid two">
-        <article><h3>End-to-end UX Research</h3><p>Discovery → evaluative → iterative. Hypothesis-led, evidence-driven, outcome-focused.</p></article>
-        <article><h3>Design Thinking Workshops</h3><p>Empathy mapping, ideation sprints, prioritisation and decision framing.</p></article>
-        <article><h3>Training & Mentorship</h3><p>Upskill teams on UX research and HCD from basics to confident delivery.</p></article>
-        <article><h3>0→1 Research Practice</h3><p>Set up research function, ops, templates, intake, and governance built to scale.</p></article>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="about-text">
-        <h2>How I Work</h2>
-        <p>I connect data, behaviour, and design to guide high-stakes product decisions. My focus is clarity, reducing noise and revealing what truly drives action.</p>
-        <div class="pill-grid">
-          <span class="pill">Problem framing</span>
-          <span class="pill">Study design</span>
-          <span class="pill">Stakeholder alignment</span>
-          <span class="pill">Storytelling</span>
-        </div>
-        <h3 class="subhead">Skills & Methods</h3>
-        <ul class="cols">
-          <li>Interviews & depth ethnography</li>
-          <li>Diary & longitudinal studies</li>
-          <li>Usability testing (lab/remote)</li>
-          <li>Surveys & mixed methods</li>
-          <li>Journey mapping & JTBD</li>
-          <li>Concept/value testing</li>
-          <li>Heuristics & expert reviews</li>
-          <li>Quant signal reading</li>
+    <div class="svc-grid">
+      <article class="svc">
+        <div class="num">01</div>
+        <h3>UX research</h3>
+        <p>Generative and evaluative research that tells product and design teams what to build, what to fix and why, from early discovery and concept testing to pre-launch usability.</p>
+        <ul>
+          <li>Moderated &amp; unmoderated usability testing</li>
+          <li>Interviews, contextual inquiry, diary studies</li>
+          <li>Concept &amp; value testing, JTBD, journey mapping</li>
+          <li>Accessibility &amp; inclusive design research</li>
         </ul>
-        <h3 class="subhead">Tools</h3>
-        <p class="tools">Figma / FigJam · UserZoom · Jupyter/Python · Miro · Maze · Excel · PowerPoint · Streamlit</p>
-      </div>
-      <div class="about-img">
-        <img src="dimi.jpg" alt="Dimi Alazzi portrait secondary">
-      </div>
-    </section>
+      </article>
+      <article class="svc">
+        <div class="num">02</div>
+        <h3>Market &amp; customer research</h3>
+        <p>Quantitative and mixed-method research to size opportunities, set priorities and understand how customers really decide, from complex financial choices to hard-to-reach groups and emerging markets.</p>
+        <ul>
+          <li>Surveys, MaxDiff, Kano &amp; A/B testing</li>
+          <li>Behavioural &amp; decision-making research</li>
+          <li>Proposition &amp; business-model validation</li>
+          <li>Multi-market and Arabic-language fieldwork</li>
+        </ul>
+      </article>
+      <article class="svc">
+        <div class="num">03</div>
+        <h3>Research strategy &amp; ResearchOps</h3>
+        <p>For teams that want research to drive decisions, not just inform them. I set up the roadmap, operating model and governance so insight reaches product plans and leadership.</p>
+        <ul>
+          <li>Strategic research roadmaps</li>
+          <li>0→1 research practice: intake, templates, standards</li>
+          <li>Capacity planning &amp; leadership dashboards</li>
+          <li>Agency briefing, selection &amp; management</li>
+        </ul>
+      </article>
+      <article class="svc feature">
+        <span class="tag">In demand</span>
+        <div class="num">04</div>
+        <h3>AI enablement for UX &amp; research</h3>
+        <p>Practical, responsible use of generative AI across the research lifecycle, from Copilot rollouts to custom agents, so your team gets faster without losing rigour or trust.</p>
+        <ul>
+          <li>AI readiness review of your research practice</li>
+          <li>AI-assisted planning, synthesis &amp; reporting</li>
+          <li>Copilot, ChatGPT &amp; Gemini adoption programmes</li>
+          <li>Responsible-AI guardrails for regulated teams</li>
+        </ul>
+      </article>
+      <article class="svc">
+        <div class="num">05</div>
+        <h3>Workflow automation</h3>
+        <p>Cut the repetitive admin around research and insight work. I map your workflows, find the time sinks and build automations and agents your team will actually use.</p>
+        <ul>
+          <li>Intake agents that turn vague requests into briefs</li>
+          <li>Recruitment, scheduling &amp; consent flows</li>
+          <li>Transcript → tagging → insight pipelines</li>
+          <li>Power Automate, Make, Airtable &amp; Python</li>
+        </ul>
+      </article>
+      <article class="svc">
+        <div class="num">06</div>
+        <h3>Upskilling &amp; coaching</h3>
+        <p>Hands-on training for researchers, designers, product managers and anyone else who does research, built around your real projects rather than generic slides.</p>
+        <ul>
+          <li>Research fundamentals for PMs &amp; designers</li>
+          <li>AI agents &amp; automation for non-technical teams</li>
+          <li>Design thinking &amp; decision-framing workshops</li>
+          <li>1:1 coaching for junior &amp; mid-level researchers</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section id="contact" class="section contact">
-      <h2>Let’s Talk</h2>
-      <p>For collaborations, advisory, or training.</p>
-      <a href="mailto:dimaalazzi@icloud.com" class="btn primary">Email me</a>
-    </section>
-  </main>
+<!-- AI -->
+<section id="ai" class="ai">
+  <div class="wrap ai-grid">
+    <div>
+      <span class="eyebrow">AI enablement</span>
+      <h2>Faster research, still done properly</h2>
+      <p class="lede">Most teams have tried an AI summary of a transcript. Far fewer have rebuilt their research workflow around AI in a way they can trust. That second part is where I come in.</p>
+      <ul class="ai-points">
+        <li><strong>I've led AI adoption inside a regulated bank.</strong> As my team's first Copilot Champion at Barclays, I piloted AI-assisted research workflows and automation, and trained colleagues to build their own agents.</li>
+        <li><strong>I build as well as advise.</strong> Applied AI and machine learning training, including an NLP model built with spaCy and Prodigy, plus Power Automate and Make workflows and working prototypes like SigQ, an agent that turns vague requests into structured briefs.</li>
+        <li><strong>Responsible by default.</strong> I contributed to Sky's internal guidance on using generative AI responsibly in research. In everything I build, people keep the judgement and every insight traces back to its evidence.</li>
+      </ul>
+    </div>
+    <div class="flow" aria-label="Where AI fits in the research lifecycle">
+      <div class="flow-step"><i>1</i><div><b>Brief &amp; plan</b><span>Agents that sharpen research questions and draft plans and discussion guides</span></div></div>
+      <div class="flow-step"><i>2</i><div><b>Recruit &amp; run</b><span>Automated screening, scheduling, consent and reminders</span></div></div>
+      <div class="flow-step"><i>3</i><div><b>Synthesise</b><span>Transcription, tagging and theme-finding, with each theme linked back to the evidence</span></div></div>
+      <div class="flow-step"><i>4</i><div><b>Share &amp; reuse</b><span>Searchable insight repositories and auto-drafted stakeholder reports</span></div></div>
+      <div class="flow-step"><i>5</i><div><b>Govern</b><span>Policies for data privacy, bias checks and responsible AI use</span></div></div>
+    </div>
+  </div>
+</section>
 
-  <footer class="ftr">
-    <small>© 2025 Dima Alazzi · Portfolio</small>
-  </footer>
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <span class="eyebrow">Selected work</span>
+    <h2>Research that shaped products, services and strategy</h2>
+    <p class="lede">A sample of recent and earlier work. Client work is anonymised where confidentiality requires it.</p>
+
+    <div class="work-grid">
+      <article class="case">
+        <div class="meta"><span>Wealth management</span><span>Discovery &amp; evaluation</span><span>Behavioural insight</span></div>
+        <h3>Financial advice &amp; decision confidence</h3>
+        <p>People managing their money want control, but also reassurance at key moments. I led end-to-end discovery and evaluative research across digital advice and investment journeys, looking at how advice cues, language and prompts affect confidence, trust and perceived risk.</p>
+        <div class="out"><b>Outcome:</b> shaped experience strategy and priorities, adding guidance where it builds confidence and stepping back where people prefer autonomy.</div>
+      </article>
+      <article class="case">
+        <div class="meta"><span>Wealth management</span><span>Mental models</span><span>Journey research</span></div>
+        <h3>Digital investing journeys</h3>
+        <p>Investing tools often assume rational behaviour, yet emotional confidence decides how people act. I researched mental models of autonomy, guidance and reassurance across entry points, risk levels and journey stages.</p>
+        <div class="out"><b>Outcome:</b> made clear when people want self-directed control and when they want guided support, informing different design and content strategies for each.</div>
+      </article>
+      <article class="case">
+        <div class="meta"><span>Regulated enterprise</span><span>Discovery</span><span>Governance</span></div>
+        <h3>Discovery for a compliance dashboard</h3>
+        <p>Internal platforms in regulated firms must support oversight and audit readiness, not just efficiency. I led discovery into accountability, exception handling and status visibility, framing insights through a governance and risk lens.</p>
+        <div class="out"><b>Outcome:</b> steered early product direction towards transparency, oversight and regulatory resilience.</div>
+      </article>
+      <article class="case">
+        <div class="meta"><span>ResearchOps</span><span>Strategy</span><span>Executive dashboards</span></div>
+        <h3>Turning research into decision-ready intelligence</h3>
+        <p>Senior leaders couldn't see how research lined up with strategy, timing and investment. I designed an enablement framework: a strategic research roadmap, capacity forecasting across research streams and a leadership dashboard that turns research activity into executive signals.</p>
+        <div class="out"><b>Outcome:</b> clearer prioritisation and resourcing, less reactive ad-hoc research, and research brought earlier into strategic decisions.</div>
+      </article>
+      <article class="case">
+        <div class="meta"><span class="hl">Demo</span><span>AI agents</span><span>Conversational UX</span><span>Automation</span></div>
+        <h3>SigQ: an AI agent for sharper briefs</h3>
+        <p>Vague requests create friction before work even starts. I designed and prototyped conversational AI agents that ask targeted clarifying questions and turn a rough request into a structured brief, automatically saved to Airtable via Make.</p>
+        <div class="out"><b>Outcome:</b> showed how AI can raise the quality of requests upstream while supporting, not replacing, researcher judgement.</div>
+        <a class="demo" href="projects/sigq.html">Watch the SigQ demo →</a>
+      </article>
+      <article class="case">
+        <div class="meta"><span>Sky</span><span>Mixed methods</span><span>TV &amp; streaming</span></div>
+        <h3>Connected TV research at scale</h3>
+        <p>For Sky Glass and Sky Stream: a MaxDiff study with 2,000 UK users to rank the information that matters most on screen, in-lab usability testing ahead of a personalisation launch, and a diary study of how people listen to music on TV.</p>
+        <div class="out"><b>Outcome:</b> an evidence-based UI hierarchy, findings that fed into a feature launch, and a new music-streaming prototype.</div>
+      </article>
+      <article class="case">
+        <div class="meta"><span>Global development</span><span>Inclusive research</span></div>
+        <h3>Research where connectivity is scarce</h3>
+        <p>Many research settings lack stable internet or standard tools. I designed a research system that let participants contribute through locally accessible platforms, with their qualitative input centralised for analysis.</p>
+        <div class="out"><b>Outcome:</b> inclusive participation, and decisions informed by voices that would otherwise have been missing.</div>
+      </article>
+      <article class="case">
+        <div class="meta"><span>Moovr</span><span>Founder</span><span>Kenya</span></div>
+        <h3>Validating a startup in rural Kenya</h3>
+        <p>As co-founder of a livestock logistics venture, I won the Allesch-Taylor Grant to fund field validation, then led a month-long field study with farmers and truck drivers using interviews, contextual inquiry and focus groups.</p>
+        <div class="out"><b>Outcome:</b> a WhatsApp and M-Pesa MVP, two letters of intent for a pilot, and groundwork for partnerships with Safaricom, the Kenya Livestock Marketing Council and Oxfam.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT -->
+<section id="engage" class="engage">
+  <div class="wrap">
+    <span class="eyebrow">Ways to work together</span>
+    <h2>Flexible engagement, through my limited company</h2>
+    <p class="lede">I work B2B through my own limited company. That suits outside-IR35 contracts, fixed-scope projects and ongoing advisory work.</p>
+    <div class="eng-grid">
+      <div class="eng"><h3>Project</h3><p>A fixed-scope study or piece of work with clear deliverables, timeline and price.</p><div class="when">Good for: a single research question</div></div>
+      <div class="eng"><h3>Contract</h3><p>I join your team for a set period as a senior or lead researcher, on-site or remote.</p><div class="when">Good for: capacity gaps &amp; leave cover</div></div>
+      <div class="eng"><h3>Advisory</h3><p>A monthly retainer for research strategy, AI enablement guidance and research leadership.</p><div class="when">Good for: growing a research function</div></div>
+      <div class="eng"><h3>Training</h3><p>Workshops, team programmes and 1:1 coaching, in person or online.</p><div class="when">Good for: upskilling your team</div></div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><h3>Discovery call</h3><p>30 minutes, free. We talk through your goals, constraints and what success looks like.</p></div>
+      <div class="step"><h3>Proposal</h3><p>Within a few working days you get a clear scope, approach, timeline and a fixed price or day rate.</p></div>
+      <div class="step"><h3>Delivery</h3><p>Regular check-ins, early sight of findings and no surprises at the end.</p></div>
+      <div class="step"><h3>Handover</h3><p>Findings your stakeholders can act on, plus the tools and know-how for your team to carry on.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <aside class="profile" aria-label="Profile">
+        <img src="images/dima-alazzi.jpg" alt="Dima Alazzi" width="200" height="200" loading="lazy">
+        <p class="pname">Dima Alazzi</p>
+        <p class="prole">Research &amp; AI Enablement Consultant</p>
+        <p class="avail"><i aria-hidden="true"></i>Available for new projects</p>
+        <ul class="pfacts">
+          <li><b>Based in</b><span>London, UK</span></li>
+          <li><b>Sectors</b><span>Finance, media, tech &amp; social impact</span></li>
+          <li><b>Languages</b><span>English · Arabic</span></li>
+          <li><b>Engagements</b><span>Project · Contract · Advisory · Training</span></li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Book a discovery call →</a>
+        <a class="cv-link" href="Dimi-Alazzi-CV.pdf" target="_blank" rel="noopener">Download my CV (PDF)</a>
+      </aside>
+      <div class="about">
+        <span class="eyebrow">About</span>
+        <h2>Hi, I'm Dima.</h2>
+        <p class="about-lede">I study how people and technology evolve together, and help teams make better decisions because of it.</p>
+        <p>I'm a research lead with more than ten years' experience shaping evidence-led decisions in wealth and financial services, connected entertainment, media, charities and international development. Most recently, at <strong>Barclays</strong>, I led the research roadmap for Wealth Planning &amp; Advice and Digital Investing, bringing client and adviser evidence into senior decisions on retirement, pensions, SIPP and ISA propositions.</p>
+        <p>Before that I was Senior UX Researcher at <strong>Sky</strong>, leading research for connected-entertainment products in the UK, US, Italy and Germany. Earlier, as Senior Research Manager at the <strong>BBC</strong>, I led research across Ethiopia, Sierra Leone and Bangladesh and conceived a multilingual conversational AI chatbot backed by a central insight repository.</p>
+        <p>I've also done research where it's hardest to do: with displaced communities for the <strong>UN's IOM</strong> during the Syrian conflict, at <strong>Mencap</strong>, where I built and led the research and evaluation team, and with farmers in rural Kenya as a startup co-founder. That work taught me to build empathy quickly, adapt methods to the people involved and turn messy reality into clear decisions.</p>
+        <p>I founded my consultancy to bring that experience, together with hands-on AI and automation skills, to teams that want to do better research and get more value from it.</p>
+        <div class="creds">
+          <div class="cred"><b>MSc Economics &amp; Business</b>King's College London · Chevening Scholar</div>
+          <div class="cred"><b>Data Science, ML &amp; Applied AI</b>Certificate, Cambridge Spark</div>
+          <div class="cred"><b>Risk &amp; Control Accreditation</b>Financial services</div>
+          <div class="cred"><b>Google Gen AI hackathon</b>With Sky Labs, 2023</div>
+          <div class="cred"><b>BSc Economics &amp; Business</b>Damascus University · First Class</div>
+          <div class="cred"><b>Bilingual</b>Arabic (native) · English (fluent)</div>
+        </div>
+        <div class="tk" aria-label="Toolkit">
+          <span>Figma &amp; FigJam</span><span>Miro</span><span>Qualtrics</span><span>Maze</span><span>UserZoom</span><span>Python &amp; Jupyter</span><span>Streamlit</span><span>spaCy</span><span>Microsoft Copilot</span><span>ChatGPT &amp; Gemini</span><span>Power Automate</span><span>Make &amp; Airtable</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="philo">
+      <div><b>Collaboration</b><span>Working with people at the right time is what creates impact.</span></div>
+      <div><b>Empathy</b><span>Learn what users share to create value, and value their differences to get the most from it.</span></div>
+      <div><b>Innovation</b><span>There's always a better way. We just haven't found it yet.</span></div>
+      <div><b>Fun</b><span>Research should be enjoyable, for clients and participants alike.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:0">
+  <div class="wrap faq">
+    <span class="eyebrow">FAQ</span>
+    <h2>Common questions</h2>
+    <details><summary>Do you work outside IR35?</summary><p>Yes. I contract through my own limited company and I'm happy to agree terms, a statement of work and working practices that support an outside-IR35 determination.</p></details>
+    <details><summary>Have you worked in regulated industries?</summary><p>Yes. I've led research in wealth management at Barclays, working closely with proposition, product, design, compliance and delivery teams, and I hold a Risk &amp; Control Accreditation. I'm used to the ethics, data protection and approval processes that high-stakes research needs.</p></details>
+    <details><summary>Can you work with our existing research team or agency?</summary><p>Yes. I often embed alongside in-house researchers, or act as the client-side lead who briefs, manages and quality-assures agency partners.</p></details>
+    <details><summary>Which markets and languages can you cover?</summary><p>I've run research in the UK, Italy, Germany, the US, Kenya, Ethiopia, Sierra Leone, Bangladesh and Syria. I'm a native Arabic speaker and can lead Arabic-language and Middle East research directly.</p></details>
+    <details><summary>Is AI-assisted research safe for our participants' data?</summary><p>Data protection is built into everything I set up. I'll recommend tools and setups that fit your data policies, keep personal data out of public models and document how AI is used, so stakeholders can trust the output.</p></details>
+    <details><summary>How do you price?</summary><p>Projects are usually fixed-price after a short scoping call. Contracts are charged by the day, and advisory work is a monthly retainer. Get in touch for a tailored quote.</p></details>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h2>Tell me what you're trying to figure out</h2>
+      <p class="lede">Whether it's a specific study, a contract role or bringing AI into your research practice, I'll reply within one working day.</p>
+      <div class="direct">
+        <a href="mailto:dimaalazzi@icloud.com"><span><small>Email</small>dimaalazzi@icloud.com</span><span aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/dimaalazzi/" target="_blank" rel="noopener"><span><small>LinkedIn</small>in/dimaalazzi</span><span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/dima-alazzi" target="_blank" rel="noopener"><span><small>GitHub: AI &amp; automation projects</small>dima-alazzi</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <form id="enquiry" novalidate>
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Company<input name="company" autocomplete="organization"></label>
+      <label>What do you need help with?
+        <select name="topic">
+          <option>UX research</option>
+          <option>Market &amp; customer research</option>
+          <option>Research strategy &amp; ResearchOps</option>
+          <option>AI enablement</option>
+          <option>Workflow automation</option>
+          <option>Training &amp; coaching</option>
+          <option>Contract role</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>A bit about the project<textarea name="message" required></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn btn-primary" type="submit">Send enquiry →</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <p class="formnote"><span id="form-method">I'll get back to you within one working day.</span> Your details are only used to reply to you. See the <a href="privacy.html">privacy notice</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <!-- COMPANY DETAILS (legally required on a UK company website): replace the [bracketed] placeholders
+       below, and in privacy.html, with the details on your Certificate of Incorporation. If your company
+       is registered in Scotland or Northern Ireland, change "England & Wales" too. -->
+  <div class="wrap">
+    <div>© <span id="yr">2026</span> [Company Name] Ltd · Registered in England &amp; Wales · Company No. [00000000]<br>Registered office: [address]</div>
+    <nav aria-label="Footer"><a href="privacy.html">Privacy notice</a><a href="#top">Back to top ↑</a></nav>
+  </div>
+</footer>
+
+<script>
+// ── Contact form ─────────────────────────────────────────────────────────────
+// Paste your free Web3Forms access key between the quotes to receive enquiries
+// straight to your inbox (get one at https://web3forms.com). While it's empty,
+// the form opens the visitor's email app with their message filled in instead.
+const WEB3FORMS_KEY = '';
+const CONTACT_EMAIL = 'dimaalazzi@icloud.com';
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.getElementById('menu');
+menuBtn.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', menu.classList.contains('open'));
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menu.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded', 'false');
+}));
+
+const form = document.getElementById('enquiry');
+const statusEl = document.getElementById('form-status');
+const submitBtn = form.querySelector('button[type=submit]');
+if (!WEB3FORMS_KEY) {
+  document.getElementById('form-method').textContent = 'This opens your email app with your message filled in.';
+}
+
+function openEmailApp(f) {
+  const subject = `Enquiry: ${f.get('topic')}${f.get('company') ? ' — ' + f.get('company') : ''}`;
+  const body = `Hi Dima,\n\n${f.get('message')}\n\n${f.get('name')}${f.get('company') ? '\n' + f.get('company') : ''}\n${f.get('email')}`;
+  location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!form.reportValidity()) return;
+  const f = new FormData(form);
+  if (f.get('botcheck')) return;
+  if (!WEB3FORMS_KEY) { openEmailApp(f); return; }
+
+  submitBtn.disabled = true;
+  statusEl.textContent = 'Sending…';
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: `Website enquiry: ${f.get('topic')}`,
+        from_name: 'dimaalazzi.com',
+        name: f.get('name'), email: f.get('email'), company: f.get('company'),
+        topic: f.get('topic'), message: f.get('message')
+      })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.success) throw new Error(data.message || res.status);
+    form.reset();
+    statusEl.textContent = "Thanks, your message is on its way. I'll reply within one working day.";
+  } catch (err) {
+    statusEl.innerHTML = `Sorry, that didn't send. Please email me at <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`;
+  } finally {
+    submitBtn.disabled = false;
+  }
+});
+</script>
 </body>
 </html>
