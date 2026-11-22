@@ -117,7 +117,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.88);backdrop-f
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
 .svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;transition:border-color .2s}
 .svc:hover{border-color:var(--accent-line)}
-.svc .num{font-family:var(--mono);color:var(--accent-ink);font-size:12px;margin-bottom:22px}
+.svc .num{font-size:44px;font-weight:300;letter-spacing:-0.04em;line-height:1;color:var(--accent-ink);margin-bottom:20px}
 .svc p{color:var(--muted);font-size:16px;margin-bottom:20px}
 .svc ul{list-style:none;margin-top:auto;border-top:1px solid var(--line);padding-top:16px}
 .svc li{font-size:15px;padding:5px 0 5px 20px;position:relative;color:var(--ink-2)}
@@ -411,6 +411,35 @@ footer nav{display:flex;gap:20px}
   .bb-doc{padding:20px 20px 24px}
   .bb-doc-head{margin:0 -20px;padding:0 20px 12px}
   .bb-doc dl > div{margin:0 -20px;padding:10px 20px 10px 18px}
+}
+
+/* tonal colour: service cards step from lilac to deep violet to graphite */
+.svc:nth-child(1){background:#e9e7f0;border-color:#dcd9e7}
+.svc:nth-child(1) .covers span{border-color:#cdc8de}
+.svc:nth-child(1) .more summary{border-color:#d6d2e3}
+.svc:nth-child(2){background:var(--accent-ink);border-color:var(--accent-ink);color:#f6f5fa}
+.svc:nth-child(2) .num,.svc:nth-child(2) .grp{color:#c9c5dc}
+.svc:nth-child(2) p{color:#d9d6e8}
+.svc:nth-child(2) .covers span{border-color:rgba(255,255,255,.28);color:#ebe9f4}
+.svc:nth-child(2) .more summary,.svc:nth-child(2) .more summary::after{color:#ebe9f4}
+.svc:nth-child(2) .more summary{border-color:rgba(255,255,255,.18)}
+.svc:nth-child(2) li{color:#ebe9f4}
+.svc:nth-child(2) li::before{background:#c9c5dc}
+/* case studies on lilac, with the selected case in deep violet */
+#work{background:#e9e7f0}
+.xp-tab,.xp-item:last-child .xp-tab{border-color:#d9d6e5}
+.xp-card{border-color:#dcd9e7}
+.cs-tags span{border-color:#cdc8de}
+.xp-content .cs-out{background:#f1f0f7;margin:0 -32px;padding:14px 32px;border-top-color:#e4e1ee}
+.xp-tab[aria-expanded="true"]{background:var(--accent-ink);color:#fff}
+.xp-tab[aria-expanded="true"] .n,.xp-tab[aria-expanded="true"] .s{color:#c9c5dc}
+.xp-tab[aria-expanded="true"]::before{display:none}
+@media (max-width:960px){
+  .xp-tab{padding-left:12px;padding-right:12px}
+  .xp-tab[aria-expanded="true"]{border-radius:6px}
+}
+@media (max-width:720px){
+  .xp-content .cs-out{margin:0 -20px;padding:14px 20px}
 }
 </style>
 </head>
