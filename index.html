@@ -827,6 +827,17 @@ footer nav{display:flex;gap:20px}
         </select>
       </label>
       <label>A bit about the project<textarea name="message" required></textarea></label>
+      <label>How did you hear about me? (optional)
+        <select name="source">
+          <option value="">Choose one</option>
+          <option>LinkedIn</option>
+          <option>Google search</option>
+          <option>A recommendation</option>
+          <option>We've worked together before</option>
+          <option>An event or talk</option>
+          <option>Somewhere else</option>
+        </select>
+      </label>
       <div class="hp" aria-hidden="true"><label>Leave this empty<input name="botcheck" tabindex="-1" autocomplete="off"></label></div>
       <button class="btn btn-primary" type="submit">Send enquiry →</button>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -880,7 +891,7 @@ if (!WEB3FORMS_KEY) {
 
 function openEmailApp(f) {
   const subject = `Enquiry: ${f.get('topic')}${f.get('company') ? ' — ' + f.get('company') : ''}`;
-  const body = `Hi Dima,\n\n${f.get('message')}\n\n${f.get('name')}${f.get('company') ? '\n' + f.get('company') : ''}\n${f.get('email')}`;
+  const body = `Hi Dima,\n\n${f.get('message')}\n\n${f.get('name')}${f.get('company') ? '\n' + f.get('company') : ''}\n${f.get('email')}${f.get('source') ? '\nHeard about you via: ' + f.get('source') : ''}`;
   location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
@@ -902,7 +913,8 @@ form.addEventListener('submit', async e => {
         subject: `Website enquiry: ${f.get('topic')}`,
         from_name: 'dimaalazzi.com',
         name: f.get('name'), email: f.get('email'), company: f.get('company'),
-        topic: f.get('topic'), message: f.get('message')
+        topic: f.get('topic'), message: f.get('message'),
+        heard_about_me_via: f.get('source') || 'Not given'
       })
     });
     const data = await res.json().catch(() => ({}));
