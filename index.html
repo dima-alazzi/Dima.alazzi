@@ -35,7 +35,7 @@
   "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"},
   "areaServed": "Worldwide",
   "knowsLanguage": ["en", "ar"],
-  "serviceType": ["UX Research", "Market Research", "Research Strategy", "Research Operations", "AI Enablement", "Workflow Automation", "Research Training"]
+  "serviceType": ["UX Research", "Market Research", "Research Strategy", "Research Operations", "AI Enablement", "Workflow Automation", "AI Agent Evaluation", "Research Training"]
 }
 </script>
 <style>
@@ -144,6 +144,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.88);backdrop-f
 .svc.feature .more summary{color:var(--accent);border-color:var(--dark-line)}
 .svc.feature .more summary::after{color:var(--accent)}
 .svc.feature .grp{color:var(--accent)}
+/* service 04: AI agent evaluation, which has its own page */
+.svc-wide{margin-top:16px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px 32px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 32px;transition:border-color .2s}
+.svc-wide:hover{border-color:var(--accent-line)}
+.svc-wide .num{font-size:44px;font-weight:300;letter-spacing:-0.04em;line-height:1;color:var(--accent-ink)}
+.svc-wide h3{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.svc-wide .tag{margin:0;color:var(--accent-ink);border-color:var(--accent-line)}
+.svc-wide p{color:var(--muted);font-size:16px;max-width:660px}
+.svc-wide .tlink{white-space:nowrap}
 
 /* AI */
 .ai{background:var(--dark);color:var(--light)}
@@ -247,6 +255,9 @@ footer nav{display:flex;gap:20px}
   section{padding:80px 0}
   .why{padding:64px 0 72px}
   .svc-grid,.flow{grid-template-columns:1fr}
+  .svc-wide{grid-template-columns:1fr;align-items:start}
+  .svc-wide .num{margin-bottom:4px}
+  .svc-wide .tlink{white-space:normal;justify-self:start}
   .eng-grid,.steps{grid-template-columns:1fr 1fr}
   .ai-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
   .flow-label{margin-top:48px}
@@ -272,7 +283,7 @@ footer nav{display:flex;gap:20px}
   .hero p{font-size:17px;margin-bottom:32px}
   .hero .btn{padding:13px 16px}
   .strip ul{gap:22px;font-size:17px}
-  .svc{padding:24px}
+  .svc,.svc-wide{padding:24px}
   .step{padding-top:44px}
   .step::before{font-size:28px}
   .profile img{width:132px;height:132px}
@@ -537,7 +548,7 @@ footer nav{display:flex;gap:20px}
 <section id="services">
   <div class="wrap">
     <span class="eyebrow">Services</span>
-    <h2>Three ways I can help</h2>
+    <h2>Four ways I can help</h2>
     <p class="lede">Take one on its own or combine them. Each can start with one focused piece of work.</p>
 
     <div class="svc-grid">
@@ -615,6 +626,15 @@ footer nav{display:flex;gap:20px}
         </details>
       </article>
     </div>
+    <!-- Service name "Parley AI" (trademark not checked yet): see the note at the top of ai-agent-evaluation.html -->
+    <article class="svc-wide">
+      <div class="num">04</div>
+      <div>
+        <h3>Parley AI <span class="tag">New</span></h3>
+        <p>Mystery shopping for AI agents. Find out how your chatbot or agent behaves before your customers do: simulated users test it in realistic scenarios, and I confirm every finding.</p>
+      </div>
+      <a class="tlink" href="ai-agent-evaluation.html">See how Parley AI works →</a>
+    </article>
   </div>
 </section>
 
@@ -821,6 +841,7 @@ footer nav{display:flex;gap:20px}
           <option>Research strategy &amp; ResearchOps</option>
           <option>AI enablement</option>
           <option>Workflow automation</option>
+          <option>AI agent evaluation</option>
           <option>Training &amp; coaching</option>
           <option>Contract role</option>
           <option>Something else</option>
@@ -885,6 +906,10 @@ menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 const form = document.getElementById('enquiry');
 const statusEl = document.getElementById('form-status');
 const submitBtn = form.querySelector('button[type=submit]');
+// Pages that link here with ?topic=… pick the matching enquiry topic
+const TOPICS = { 'agent-evaluation': 'AI agent evaluation' };
+const linkedTopic = TOPICS[new URLSearchParams(location.search).get('topic')];
+if (linkedTopic) form.elements.topic.value = linkedTopic;
 if (!WEB3FORMS_KEY) {
   document.getElementById('form-method').textContent = 'This opens your email app with your message filled in.';
 }
