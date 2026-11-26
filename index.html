@@ -101,6 +101,39 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.88);backdrop-f
 .hero-new span{border-bottom:1px solid rgba(157,152,182,.5)}
 .hero-new:hover{color:var(--light)}
 .hero-new:hover span{border-color:var(--accent)}
+.nav ul a.nav-flag{color:var(--light)}
+.nav-flag::before{content:"";display:inline-block;width:6px;height:6px;background:var(--accent);margin-right:8px;vertical-align:2px}
+
+/* flagship: Parley AI */
+.flag{background:var(--accent-ink);color:#f6f5fa;padding:88px 0}
+.flag .eyebrow{color:#d9d6e8}
+.flag .eyebrow::before{background:#d9d6e8}
+.flag-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:64px;align-items:center}
+.flag h2{color:#fff;max-width:620px}
+.flag .lede{color:#e4e2ee}
+.flag-pts{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:36px 0 40px}
+.flag-pts li{border-top:1px solid rgba(255,255,255,.3);padding-top:16px}
+.flag-pts b{display:block;font-weight:500;margin-bottom:4px;color:#fff}
+.flag-pts span{display:block;font-size:14px;line-height:1.5;color:#e0deeb}
+.flag-ctas{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.flag .tlink{color:#fff;border-color:rgba(255,255,255,.45)}
+.flag .tlink:hover{border-color:#fff}
+/* example finding (an illustration, not a real result) */
+.eg{background:var(--dark-2);border:1px solid #2c2840;border-radius:var(--radius);overflow:hidden;color:var(--light)}
+.eg-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--dark-line);font-family:var(--mono);font-size:11px;color:var(--dark-faint)}
+.eg-sev{font-family:var(--mono);font-size:11px;line-height:1;padding:5px 8px;border-radius:4px;background:var(--accent);color:var(--ink)}
+.eg-body{padding:20px 20px 4px}
+.eg-cat{font-size:18px;font-weight:500;letter-spacing:-0.015em}
+.eg-scn{font-size:14px;color:var(--dark-muted);margin-top:2px}
+.eg-turns{margin-top:18px;display:grid;gap:12px}
+.eg-turn small{display:block;font-family:var(--mono);font-size:11px;color:var(--dark-faint);margin-bottom:4px}
+.eg-turn p{font-size:15px;line-height:1.5;color:#c9cad0}
+.eg-turn.user p{background:#1f2025;border:1px solid var(--dark-line);border-radius:8px;padding:9px 13px}
+.eg-turn blockquote{font-size:15px;line-height:1.5;border-left:2px solid var(--accent);padding:2px 0 2px 13px}
+.eg-turn mark{background:rgba(157,152,182,.28);color:inherit;padding:0 2px;border-radius:2px}
+.eg-checks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;padding:16px 20px;margin-top:18px;border-top:1px solid var(--dark-line);font-family:var(--mono);font-size:11px;color:var(--accent)}
+.eg-checks li::before{content:"✓ "}
+.eg figcaption{padding:0 20px 16px;font-size:13px;color:var(--dark-faint)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:1px solid var(--dark-line)}
 .stat{padding:28px 20px 0 0}
 .stat b{display:block;font-size:40px;font-weight:300;letter-spacing:-0.04em;color:var(--light);line-height:1}
@@ -261,6 +294,9 @@ footer nav{display:flex;gap:20px}
   section{padding:80px 0}
   .why{padding:64px 0 72px}
   .svc-grid,.flow{grid-template-columns:1fr}
+  .flag{padding:72px 0}
+  .flag-grid{grid-template-columns:1fr;gap:40px}
+  .flag .eg{max-width:560px}
   .svc-wide{grid-template-columns:1fr;align-items:start}
   .svc-wide .num{margin-bottom:4px}
   .svc-wide .tlink{white-space:normal;justify-self:start}
@@ -290,6 +326,8 @@ footer nav{display:flex;gap:20px}
   .hero .btn{padding:13px 16px}
   .strip ul{gap:22px;font-size:17px}
   .svc,.svc-wide{padding:24px}
+  .flag{padding:56px 0}
+  .flag-pts{grid-template-columns:1fr;gap:16px}
   .step{padding-top:44px}
   .step::before{font-size:28px}
   .profile img{width:132px;height:132px}
@@ -491,6 +529,7 @@ footer nav{display:flex;gap:20px}
     <a href="#top" class="logo"><span>DA</span>Dima Alazzi</a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
     <ul id="menu">
+      <li><a href="ai-agent-evaluation.html" class="nav-flag">Parley AI</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#ai">AI enablement</a></li>
       <li><a href="#work">Work</a></li>
@@ -518,7 +557,7 @@ footer nav{display:flex;gap:20px}
       <div class="hero-tags">
         <span class="avail"><i aria-hidden="true"></i>Available for contracts and projects</span>
         <!-- Service name "Parley AI": see the note at the top of ai-agent-evaluation.html -->
-        <a class="hero-new" href="ai-agent-evaluation.html"><b>New</b><span>Parley AI: mystery shopping for AI agents</span> →</a>
+        <a class="hero-new" href="ai-agent-evaluation.html"><b>Flagship</b><span>Parley AI: a mystery shopper for your AI agents</span> →</a>
       </div>
     </div>
     <div class="stats">
@@ -527,6 +566,39 @@ footer nav{display:flex;gap:20px}
       <div class="stat"><b>9</b><small>markets across four continents</small></div>
       <div class="stat"><b>1st</b><small>Copilot Champion on my team at Barclays</small></div>
     </div>
+  </div>
+</section>
+
+<!-- FLAGSHIP: Parley AI (service name: see the note at the top of ai-agent-evaluation.html) -->
+<section id="parley" class="flag" aria-labelledby="parley-h">
+  <div class="wrap flag-grid">
+    <div>
+      <span class="eyebrow">Flagship · Parley AI</span>
+      <h2 id="parley-h">A mystery shopper for your AI agents</h2>
+      <p class="lede">Parley AI holds realistic conversations with your agent, tests the edge cases and judges how reliably it behaves against published standards. You get a detailed report, signed off by a researcher, so your customers get an experience that's safe, trustworthy and human.</p>
+      <ul class="flag-pts">
+        <li><b>In your agent's own words</b><span>Every finding quotes exactly what your agent said, and in which scenario.</span></li>
+        <li><b>Fewer rounds of testing</b><span>Many scenarios run in one go, so you aren't testing by hand, round after round.</span></li>
+        <li><b>Signed off by a person</b><span>Nothing reaches you until a researcher has confirmed it.</span></li>
+      </ul>
+      <div class="flag-ctas">
+        <a class="btn btn-primary" href="ai-agent-evaluation.html">Explore Parley AI →</a>
+        <a class="tlink" href="?topic=agent-evaluation#contact">Talk to me about your agent</a>
+      </div>
+    </div>
+    <figure class="eg">
+      <div class="eg-head"><span>Example finding</span><span class="eg-sev">High</span></div>
+      <div class="eg-body">
+        <p class="eg-cat">Missed or blocked handover</p>
+        <p class="eg-scn">Scenario: can't afford this month's bill</p>
+        <div class="eg-turns">
+          <div class="eg-turn user"><small>Simulated user</small><p>I've just lost my job and I can't pay this month. Can I talk to someone?</p></div>
+          <div class="eg-turn"><small>Agent · turn 4</small><blockquote><mark>I'm not able to arrange payment plans.</mark> Is there anything else I can help with today?</blockquote></div>
+        </div>
+      </div>
+      <ul class="eg-checks"><li>Quote found in transcript</li><li>Confirmed by a researcher</li></ul>
+      <figcaption>Made up to show what a finding looks like. Not from a real agent.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -640,8 +712,8 @@ footer nav{display:flex;gap:20px}
     <article class="svc-wide">
       <div class="num">04</div>
       <div>
-        <h3>Parley AI <span class="tag">New</span></h3>
-        <p>Mystery shopping for AI agents. Simulated customers test your chatbot before real ones do, and I check every finding.</p>
+        <h3>Parley AI <span class="tag">Flagship</span></h3>
+        <p>A mystery shopper for your AI agents: realistic conversations, evidence in your agent's own words, and a researcher's sign-off on every finding.</p>
       </div>
       <a class="tlink" href="ai-agent-evaluation.html">See how Parley AI works →</a>
     </article>
