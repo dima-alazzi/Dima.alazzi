@@ -95,6 +95,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.88);backdrop-f
 .hero-avail{display:flex;align-items:center;gap:12px;margin-top:28px}
 .hero-avail img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(157,152,182,.5);flex:none}
 .hero-avail .avail{margin-top:0}
+.hero-tags{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.hero-new{display:inline-block;font-size:14px;line-height:1.6;color:#c9cad0;text-decoration:none}
+.hero-new b{display:inline-block;margin-right:8px;vertical-align:1px;font-family:var(--mono);font-size:11px;font-weight:400;line-height:1;color:var(--ink);background:var(--accent);border-radius:4px;padding:4px 7px}
+.hero-new span{border-bottom:1px solid rgba(157,152,182,.5)}
+.hero-new:hover{color:var(--light)}
+.hero-new:hover span{border-color:var(--accent)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:1px solid var(--dark-line)}
 .stat{padding:28px 20px 0 0}
 .stat b{display:block;font-size:40px;font-weight:300;letter-spacing:-0.04em;color:var(--light);line-height:1}
@@ -509,7 +515,11 @@ footer nav{display:flex;gap:20px}
     </div>
     <div class="hero-avail">
       <img src="images/dima-alazzi.jpg" alt="Dima Alazzi" width="40" height="40">
-      <span class="avail"><i aria-hidden="true"></i>Available for contracts and projects</span>
+      <div class="hero-tags">
+        <span class="avail"><i aria-hidden="true"></i>Available for contracts and projects</span>
+        <!-- Service name "Parley AI": see the note at the top of ai-agent-evaluation.html -->
+        <a class="hero-new" href="ai-agent-evaluation.html"><b>New</b><span>Parley AI: mystery shopping for AI agents</span> →</a>
+      </div>
     </div>
     <div class="stats">
       <div class="stat"><b>10+</b><small>years shaping evidence-led decisions</small></div>
@@ -631,7 +641,7 @@ footer nav{display:flex;gap:20px}
       <div class="num">04</div>
       <div>
         <h3>Parley AI <span class="tag">New</span></h3>
-        <p>Mystery shopping for AI agents. Find out how your chatbot or agent behaves before your customers do: simulated users test it in realistic scenarios, and I confirm every finding.</p>
+        <p>Mystery shopping for AI agents. Simulated customers test your chatbot before real ones do, and I check every finding.</p>
       </div>
       <a class="tlink" href="ai-agent-evaluation.html">See how Parley AI works →</a>
     </article>
